@@ -1,5 +1,6 @@
 /*
 CountryFactory.java
+Factory for country
 Author: Demi Farquhar (220322104)
 Date: 13 June 2022
  */
