@@ -1,0 +1,13 @@
+server:
+  error:
+    include-stacktrace: never
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create #update
+      show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/FTEST?createDatabaseIfNotExist=true #default port is 3306
+    username: root
+    password:
