@@ -56,7 +56,7 @@ class EmployeeServiceImplTest {
     @Test
     @Order(4)
     void delete() {
-        service.delete(employee); //deleted employee 1
+        service.delete(employee);
         List<Employee> list = this.service.findAll();
         System.out.println(list);
     }
@@ -65,13 +65,13 @@ class EmployeeServiceImplTest {
     @Order(3)
     void findAll() {
         List<Employee> list = this.service.findAll();
-        System.out.println(list); //displays both employees
+        System.out.println(list);
     }
 
     @Test
     @Order(5)
     void deleteById() {
-        service.deleteById("2B3"); //Deleted Employee 2B3 (List should be empty)
+        service.deleteById("2B3");
         List<Employee> list = this.service.findAll();
         System.out.println(list);
     }

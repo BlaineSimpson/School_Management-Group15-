@@ -53,7 +53,7 @@ class CityServiceImplTest {
     @Test
     @Order(4)
     void delete() {
-        service.delete(city); //deleted city 1
+        service.delete(city);
         List<City> list = this.service.findAll();
         System.out.println(list);
     }
@@ -62,13 +62,13 @@ class CityServiceImplTest {
     @Order(3)
     void findAll() {
         List<City> list = this.service.findAll();
-        System.out.println(list); //displays both cities
+        System.out.println(list);
     }
 
     @Test
     @Order(5)
     void deleteById() {
-        service.deleteById("2A"); //Deleted City 2A (List should be empty)
+        service.deleteById("2A");
         List<City> list = this.service.findAll();
         System.out.println(list);
     }

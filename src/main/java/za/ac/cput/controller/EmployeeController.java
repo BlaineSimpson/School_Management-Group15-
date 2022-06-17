@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("school-management/student")
+@RequestMapping("school-management/employee")
 @Slf4j
 public class EmployeeController {
 
@@ -22,7 +22,7 @@ public class EmployeeController {
     public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
-    //@Valid checks that the data that is sent to the method is valid or not
+
     @PostMapping("save")
     public ResponseEntity<Employee> save(@Valid @RequestBody Employee employee){
         log.info("Save Request: {}", employee); //logging using lombok

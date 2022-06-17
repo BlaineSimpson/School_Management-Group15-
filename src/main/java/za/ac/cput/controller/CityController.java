@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("school-management/student")
+@RequestMapping("school-management/city")
 @Slf4j
 public class CityController {
 
@@ -22,7 +22,7 @@ public class CityController {
     public CityController(CityService cityService) {
         this.cityService = cityService;
     }
-    //@Valid checks that the data that is sent to the method is valid or not
+
     @PostMapping("save")
     public ResponseEntity<City> save(@Valid @RequestBody City city){
         log.info("Save Request: {}", city); //logging using lombok

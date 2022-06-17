@@ -19,13 +19,12 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest (webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class CityControllerTest {
-    //springboot selects any random, and use that as the port
+
     @LocalServerPort
     private int port;
 
     @Autowired
     private CityController controller;
-    //Used to test our web services
     @Autowired private TestRestTemplate restTemplate;
 
     private City city;
@@ -45,9 +44,9 @@ class CityControllerTest {
         String url = baseUrl + "save";
         ResponseEntity<City> response = restTemplate.postForEntity(url, this.city, City.class);
         assertAll(
-                //checking to see that the statusCode for response matches OK (that it is successful)
+
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
-                //checking that response has a body
+
                 () -> assertNotNull(response.getBody())
         );
     }
@@ -89,7 +88,7 @@ class CityControllerTest {
         System.out.println(Arrays.asList(response.getBody()));
         assertAll(
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
-                //length is the number of insertion done
+
                 () -> assertTrue(response.getBody().length == 1)
         );
     }
