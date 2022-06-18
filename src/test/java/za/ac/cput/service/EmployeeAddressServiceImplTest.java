@@ -1,4 +1,4 @@
-package za.ac.cput.impl;
+package za.ac.cput.service;
 /*
 Author: Blaine Simpson
 Student Nr: 218020171
@@ -15,7 +15,6 @@ import za.ac.cput.factory.AddressFactory;
 import za.ac.cput.factory.CityFactory;
 import za.ac.cput.factory.CountryFactory;
 import za.ac.cput.factory.EmployeeAddressFactory;
-import za.ac.cput.service.EmployeeAddressService;
 
 import java.util.List;
 import java.util.Optional;
