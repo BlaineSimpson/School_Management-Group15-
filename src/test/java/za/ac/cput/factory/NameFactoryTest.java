@@ -12,44 +12,45 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class NameFactoryTest {
 
-    @Test
+@Test
     public void createNameWithAllValues(){
-    Name name= NameFactory.createName("Demi ","Alexis","Farquhar");
-    System.out.println("Create Name With All Values");
-    System.out.println(name);
-    assertNotNull(name);
-    System.out.println();
-}
+        Name name= NameFactory.createName("Demi ","Alexis","Farquhar");
+        System.out.println("Create Name With All Values");
+        System.out.println(name);
+        assertNotNull(name);
+        System.out.println();
+    }
+
 @Test
 //Test to create middleName with empty string
-public void createNameWithMissingValues(){
-  Name name= NameFactory.createName("Demi","","Farquhar");
-  assertNotNull(name);
-  System.out.println(name);
-    System.out.println();
-}
+    public void createNameWithMissingValues(){
+        Name name= NameFactory.createName("Demi","","Farquhar");
+        assertNotNull(name);
+        System.out.println(name);
+        System.out.println();
+    }
+
 @Test
 //When middleName is null then it is replaced with empty string
     public void createNameWithNull(){
-    Name name= NameFactory.createName("Demi",null,"Farquhar");
-    assertAll(
-            () ->assertTrue(name.getMiddleName().isEmpty()),
-            () ->assertNotNull(name)
-    );
-    System.out.println("Replace Null with empty string ");
-    System.out.println(name);
-    System.out.println();
-}
+        Name name= NameFactory.createName("Demi",null,"Farquhar");
+        assertAll(
+                () ->assertTrue(name.getMiddleName().isEmpty()),
+                () ->assertNotNull(name)
+        );
+        System.out.println("Replace Null with empty string ");
+        System.out.println(name);
+        System.out.println();
+    }
+
 @Test
 //Test for when a mandatory attribute is empty
     public void nameError(){
-    Exception exc=assertThrows(IllegalArgumentException.class,()->NameFactory
-            .createName("","Alexis","Farquhar"));
-    String exceptionMessage= exc.getMessage();
-    System.out.println(exceptionMessage);
-    assertNotSame("Invalid for param", exceptionMessage);
-    System.out.println();
-}
-
-
+        Exception exc=assertThrows(IllegalArgumentException.class,()->NameFactory
+                .createName("","Alexis","Farquhar"));
+        String exceptionMessage= exc.getMessage();
+        System.out.println(exceptionMessage);
+        assertNotSame("Invalid for param", exceptionMessage);
+        System.out.println();
+    }
 }

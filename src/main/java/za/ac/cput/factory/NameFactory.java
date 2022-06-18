@@ -9,10 +9,11 @@ package za.ac.cput.factory;
 import za.ac.cput.domain.Name;
 import za.ac.cput.util.Helper;
 
+
 public class NameFactory {
     public static Name createName(String firstName, String middleName, String lastName){
-        Helper.checkStringParam("First Name",firstName);
-        Helper.checkStringParam("Last Name",lastName);
+        Helper.checkStringParam("First Name",firstName);//Mandatory attribute
+        Helper.checkStringParam("Last Name",lastName);//Mandatory attribute
         middleName=Helper.setEmptyIfNull(middleName);
 
         return new Name.Builder().setFirstName(firstName).setMiddleName(middleName).setLastName(lastName)

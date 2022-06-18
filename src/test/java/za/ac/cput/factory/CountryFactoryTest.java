@@ -13,8 +13,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 class CountryFactoryTest {
-
     @Test
+    //build a country
     public void CreateCountryWithAllValues() {
         Country country = CountryFactory.createCountry("01A", "Sweden");
         System.out.println("Create Country With All Values");
@@ -29,7 +29,7 @@ class CountryFactoryTest {
                 .createCountry("","Sweden"));
         String exceptionMessage= exc.getMessage();
         System.out.println(exceptionMessage);
-       assertNotSame("Country Id required",exceptionMessage);
-       System.out.println();
+        assertNotSame("Country Id required",exceptionMessage);
+        System.out.println();
     }
 }

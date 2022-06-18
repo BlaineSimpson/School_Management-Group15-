@@ -12,6 +12,7 @@ import za.ac.cput.domain.Employee;
 import za.ac.cput.factory.NameFactory;
 import za.ac.cput.factory.EmployeeFactory;
 
+import javax.validation.constraints.Email;
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -53,7 +54,7 @@ class EmployeeControllerTest {
     }
 
     @Test
-    @Order(2)
+    @Order(3)
     void findById() {
         String url = baseUrl + "find/" + this.employee.getStaffId();
         ResponseEntity<Employee> response = this.restTemplate.getForEntity(url, Employee.class);
@@ -66,7 +67,7 @@ class EmployeeControllerTest {
     }
 
     @Test
-    @Order(4)
+    @Order(5)
     void deleteById() {
         String url = baseUrl + "delete/" + employee.getStaffId();
         restTemplate.delete(url);
@@ -74,7 +75,7 @@ class EmployeeControllerTest {
     }
 
     @Test
-    @Order(5)
+    @Order(6)
     void delete() {
         String url = baseUrl + "delete-employee";
         restTemplate.delete(url);
@@ -82,7 +83,7 @@ class EmployeeControllerTest {
     }
 
     @Test
-    @Order(3)
+    @Order(4)
     void findAll() {
         String url = baseUrl + "all";
         ResponseEntity<Employee[]> response = restTemplate.getForEntity(url, Employee[].class);
@@ -93,4 +94,19 @@ class EmployeeControllerTest {
                 () -> assertTrue(response.getBody().length == 1)
         );
     }
-}
+@Test
+@Order(2)//question 5
+void findByEmail(){
+ String url = baseUrl + "find-by-email/" + this.employee.getEmail();
+    ResponseEntity<Employee> response = this.restTemplate.getForEntity(url, Employee.class);
+    assertAll(
+            () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
+            () -> assertNotNull(response.getBody())
+    );
+ System.out.println(url);
+
+
+        }
+
+    }
+
