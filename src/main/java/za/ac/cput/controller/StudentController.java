@@ -1,3 +1,8 @@
+/* StudentController.java
+ Implementation the student controller
+ Author: Ali Mohamed (219113505)
+ Date: 17 June 2022
+*/
 package za.ac.cput.controller;
 
 import lombok.extern.slf4j.Slf4j;

@@ -1,3 +1,8 @@
+/* StudentControllerTest.java
+ Testing the student controller
+ Author: Ali Mohamed (219113505)
+ Date: 17 June 2022
+*/
 package za.ac.cput.controller;
 
 import org.junit.jupiter.api.*;
