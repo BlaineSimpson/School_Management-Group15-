@@ -1,5 +1,6 @@
 /*
 Name.java
+Value object
 Author: Demi Farquhar (220322104)
 Date: 11 June 2022
  */
@@ -17,7 +18,7 @@ public class Name {
   @NotNull
   private String lastName;
 
-    //constructor
+    //This is constructor
     protected Name(){
 
     }
@@ -40,6 +41,7 @@ public class Name {
         return lastName;
     }
 
+
     //Added setters to fix Getter errors ?
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -52,6 +54,7 @@ public class Name {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
 
     @Override
     public boolean equals(Object o) {

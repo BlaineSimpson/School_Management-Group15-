@@ -18,7 +18,7 @@ public class Country {
    @NotNull
    private String name;
 
-    //constructor
+    //This is constructor
     protected Country(){
 
     }
@@ -27,7 +27,7 @@ public class Country {
         this.name=builder.name;
 
     }
-
+//Getters to take away error
     public String getId() {
         return id;
     }

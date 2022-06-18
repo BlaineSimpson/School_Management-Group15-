@@ -1,5 +1,6 @@
 /*
 NameFactory.java
+Factory for Name
 Author: Demi Farquhar (220322104)
 Date: 13 June 2022
  */
