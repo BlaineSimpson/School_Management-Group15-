@@ -12,5 +12,6 @@ import java.util.List;
 
 public interface ICountryService extends IService<Country,String>{
     List<Country> findAll();
+    void deleteById(String id);
 
 }

@@ -38,6 +38,11 @@ public class CityServiceImpl implements CityService {
     }
 
     @Override
+    public void deleteById(String s) {
+
+    }
+
+    @Override
     public void delete(City city) {
         this.cRepository.delete(city);
 
