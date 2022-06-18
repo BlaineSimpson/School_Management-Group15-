@@ -10,5 +10,5 @@ import java.util.List;
 public interface CityService extends IService<City, String>  {
     List<City> findAll();
 
-    void deleteById(String s);
+    void deleteById(String id);
 }

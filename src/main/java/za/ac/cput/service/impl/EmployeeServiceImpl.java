@@ -6,6 +6,7 @@ Author: Shuaib Allie (217148867)
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import za.ac.cput.domain.City;
 import za.ac.cput.domain.Employee;
 import za.ac.cput.repository.EmployeeRepository;
 import za.ac.cput.service.EmployeeService;
@@ -41,5 +42,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public List<Employee> findAll() {
         return this.repository.findAll();
+    }
+
+    @Override
+    public void deleteById(String id) {
+        Optional<Employee> employee = findById(id);
+        employee.ifPresent(this::delete);
     }
 }

@@ -44,7 +44,7 @@ public class EmployeeController {
         return ResponseEntity.noContent().build();
     }
 
-    @DeleteMapping("delete-student")
+    @DeleteMapping("delete-employee")
     public ResponseEntity<Void> delete(Employee employee){
         log.info("Delete request: {}", employee);
         this.employeeService.delete(employee);
