@@ -49,8 +49,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.ifPresent(this::delete);
     }
     @Override
-    public Optional<Employee> findByEmail(String email) {
-        return this.repository.findByEmail(email);
+    public Optional<Employee> findEmployeeByEmail(String email) {
+        return this.repository.findEmployeeByEmail(email);
     }
 
 

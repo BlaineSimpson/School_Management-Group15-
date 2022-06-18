@@ -5,7 +5,7 @@ server:
 spring:
   jpa:
     hibernate:
-      ddl-auto: create #update
+      ddl-auto: update #create
     show-sql: true
   datasource:
     url: jdbc:mysql://localhost:3306/schoolmanagement-Grp15?createDatabaseIfNotExist=true #default port is 3306

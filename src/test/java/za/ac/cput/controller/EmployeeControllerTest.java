@@ -12,12 +12,11 @@ import za.ac.cput.domain.Employee;
 import za.ac.cput.factory.NameFactory;
 import za.ac.cput.factory.EmployeeFactory;
 
-import javax.validation.constraints.Email;
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest (webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class EmployeeControllerTest {
 
@@ -27,14 +26,15 @@ class EmployeeControllerTest {
     @Autowired
     private EmployeeController controller;
 
-    @Autowired private TestRestTemplate restTemplate;
+    @Autowired
+    private TestRestTemplate restTemplate;
 
     private Employee employee;
     private Name name;
     private String baseUrl;
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         name = NameFactory.createName("Shuaib", "", "Allie");
         employee = EmployeeFactory.createEmployee("1", "219113505@mycput.ac.za", name);
         baseUrl = "http://localhost:" + port + "/school-management/employee/";
@@ -94,19 +94,19 @@ class EmployeeControllerTest {
                 () -> assertTrue(response.getBody().length == 1)
         );
     }
-@Test
-@Order(2)//question 5
-void findByEmail(){
- String url = baseUrl + "find-by-email/" + this.employee.getEmail();
-    ResponseEntity<Employee> response = this.restTemplate.getForEntity(url, Employee.class);
-    assertAll(
-            () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
-            () -> assertNotNull(response.getBody())
-    );
- System.out.println(url);
 
-
-        }
-
+    //question 5
+    @Test
+    @Order(2)
+    void findEmployeeByEmail() {
+        String url = baseUrl + "find-by-email/" + this.employee.getEmail();
+        ResponseEntity<Employee> response = this.restTemplate.getForEntity(url, Employee.class);
+        assertAll(
+                () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
+                () -> assertNotNull(response.getBody())
+        );
+        System.out.println(url);
     }
+
+}
 

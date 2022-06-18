@@ -62,17 +62,16 @@ public class EmployeeController {
     }
 
     //This is question5
-   @GetMapping("find-by-email/{email}")
-
-   public ResponseEntity<Name> findByEmail(@PathVariable String email) {
-   log.info("Find name by email request: {}", email);
-   try {
-            Helper.emailValid(email);
-   } catch (IllegalArgumentException e) {
+    @GetMapping("find-by-email/{email}")
+    public ResponseEntity<Name> findEmployeeByEmail(@PathVariable String email) {
+        log.info("Find name by email request: {}", email);
+        try {
+            Helper.emailValid(email); //Check if email is valid
+        } catch (IllegalArgumentException e) {
             log.info("Find name by email request error: {}", e.getMessage());
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
-   }
-        Employee employee = this.employeeService.findByEmail(email)
+        }
+        Employee employee = this.employeeService.findEmployeeByEmail(email)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         return ResponseEntity.ok(employee.getName());
     }

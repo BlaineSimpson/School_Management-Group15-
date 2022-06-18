@@ -30,7 +30,7 @@ class EmployeeServiceImplTest {
     private final Name name = NameFactory.createName("Shuaib", "", "Allie");
     private final Name name2 = NameFactory.createName("Shuaib2", "", "Allie2");
     private final Employee employee = EmployeeFactory.createEmployee("1A2", "217148867@mycput.ac.za", name);
-    private final Employee employee2 = EmployeeFactory.createEmployee("2B3", "217148867@mycput.ac.za", name2);
+    private final Employee employee2 = EmployeeFactory.createEmployee("2B3", "Shuaib@gmail.com", name2);
 
     @Test
     @Order(1)
@@ -54,14 +54,6 @@ class EmployeeServiceImplTest {
     }
 
     @Test
-    @Order(4)
-    void delete() {
-        service.delete(employee);
-        List<Employee> list = this.service.findAll();
-        System.out.println(list);
-    }
-
-    @Test
     @Order(3)
     void findAll() {
         List<Employee> list = this.service.findAll();
@@ -69,7 +61,23 @@ class EmployeeServiceImplTest {
     }
 
     @Test
+    @Order(4)
+    void findEmployeeByEmail() {
+        Optional<Employee> employeeGet = this.service.findEmployeeByEmail(this.employee2.getEmail());
+        System.out.println(employeeGet);
+        assertNotNull(employeeGet);
+    }
+
+    @Test
     @Order(5)
+    void delete() {
+        service.delete(employee);
+        List<Employee> list = this.service.findAll();
+        System.out.println(list);
+    }
+
+    @Test
+    @Order(6)
     void deleteById() {
         service.deleteById("2B3");
         List<Employee> list = this.service.findAll();

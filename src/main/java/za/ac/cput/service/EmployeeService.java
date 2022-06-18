@@ -14,5 +14,5 @@ public interface EmployeeService extends IService<Employee, String> {
 
     void deleteById(String id);
 
-    Optional<Employee> findByEmail(String email);//Question 5 validate email
+    Optional<Employee> findEmployeeByEmail(String email);//Question 5 validate email
 }
