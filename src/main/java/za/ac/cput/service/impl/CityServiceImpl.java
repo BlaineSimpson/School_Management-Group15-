@@ -40,13 +40,16 @@ public class CityServiceImpl implements CityService {
     @Override
     public void delete(City city) {
         this.cRepository.delete(city);
-
-
     }
 
     @Override
     public void deleteById(String id) {
         Optional<City> city = findById(id);
         city.ifPresent(this::delete);
+    }
+
+    @Override
+    public List<City> findCitiesByCountry_Id(String id) {
+        return this.cRepository.findCitiesByCountry_Id(id);
     }
 }

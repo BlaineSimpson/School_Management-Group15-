@@ -23,10 +23,13 @@ class CityServiceImplTest {
 
     @Autowired
     private CityServiceImpl service;
-    private final Country country = CountryFactory.createCountry("1A", "South Africa");
-    private final Country country2 = CountryFactory.createCountry("1B", "Denmark");
+    private final Country country = CountryFactory.createCountry("Za", "South Africa");
+    private final Country country2 = CountryFactory.createCountry("Dm", "Denmark");
     private final City city = CityFactory.createCity("1A", "Cape Town", country);
-    private final City city2 = CityFactory.createCity("2A", "Copenhagen", country2);
+    private final City city2 = CityFactory.createCity("2A", "Prt", country2);
+    private final City city3 = CityFactory.createCity("3A", "Jhb", country);
+    private final City city4 = CityFactory.createCity("4A", "Kzn", country);
+    private final City city5 = CityFactory.createCity("5A", "FS", country);
 
 
     @Test
@@ -34,6 +37,9 @@ class CityServiceImplTest {
     void save() {
         City create = this.service.save(this.city);
         City create2 = this.service.save(this.city2);
+        City create3 = this.service.save(this.city3);
+        City create4 = this.service.save(this.city4);
+        City create5 = this.service.save(this.city5);
         assertNotNull(create);
         assertNotNull(create2);
         System.out.println(create);
@@ -51,14 +57,6 @@ class CityServiceImplTest {
     }
 
     @Test
-    @Order(4)
-    void delete() {
-        service.delete(city);
-        List<City> list = this.service.findAll();
-        System.out.println(list);
-    }
-
-    @Test
     @Order(3)
     void findAll() {
         List<City> list = this.service.findAll();
@@ -66,7 +64,22 @@ class CityServiceImplTest {
     }
 
     @Test
+    @Order(4)
+    void findCitiesByCountry_Id() {
+        List<City> list = this.service.findCitiesByCountry_Id(country.getId());
+        System.out.println(list);
+    }
+
+    @Test
     @Order(5)
+    void delete() {
+        service.delete(city5);
+        List<City> list = this.service.findAll();
+        System.out.println(list);
+    }
+
+    @Test
+    @Order(6)
     void deleteById() {
         service.deleteById("2A");
         List<City> list = this.service.findAll();

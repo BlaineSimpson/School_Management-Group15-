@@ -55,18 +55,18 @@ class StudentServiceImplTest {
     }
 
     @Test
+    @Order(3)
+    void findAll() {
+        List<Student> list = this.service.findAll();
+        System.out.println(list); //displays both students
+    }
+
+    @Test
     @Order(4)
     void delete() {
         service.delete(student); //deleted student 1
         List<Student> list = this.service.findAll();
         System.out.println(list);
-    }
-
-    @Test
-    @Order(3)
-    void findAll() {
-        List<Student> list = this.service.findAll();
-        System.out.println(list); //displays both students
     }
 
     @Test

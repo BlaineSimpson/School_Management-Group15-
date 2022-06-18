@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface CityService extends IService<City, String>  {
     List<City> findAll();
-
     void deleteById(String id);
+    List<City> findCitiesByCountry_Id(String id);
 }
