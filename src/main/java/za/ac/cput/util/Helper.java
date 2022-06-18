@@ -21,9 +21,14 @@ public class Helper {
         return address == null;
     }
 
-    public static boolean emailValid(String email){
+    public static boolean emailValid(String email) {
         EmailValidator valid = EmailValidator.getInstance();
+       // return valid.isValid(email);
+        if (!valid.isValid(email))//Question 5
+            throw new IllegalArgumentException("Email not valid");
+        else
         return valid.isValid(email);
+
     }
     public static boolean isEmptyOrNull(String string ){
         return StringUtils.isEmpty(string);}
@@ -42,4 +47,3 @@ public class Helper {
     }
 
 }
-
