@@ -5,6 +5,7 @@ Student Nr: 218020171
  */
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import za.ac.cput.domain.Address;
 import za.ac.cput.domain.City;
@@ -27,7 +28,7 @@ public class EmployeeAddressServiceImplTest {
     City city = CityFactory.createCity( "A", "Lee",country);
     Address address = AddressFactory.createAddress("4", "skyway","5","AfricaSTR",6850,city);
     EmployeeAddress employeeAddress = EmployeeAddressFactory.createEmployeeAddress("1", address );
-
+    @Autowired
     private EmployeeAddressService service;
 
     @Test

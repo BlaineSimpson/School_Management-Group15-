@@ -26,7 +26,7 @@ public class EmployeeController {
     @PostMapping("save")
     public ResponseEntity<Employee> save(@Valid @RequestBody Employee employee){
         log.info("Save Request: {}", employee); //logging using lombok
-        Employee insert = EmployeeService.save(employee);
+        Employee insert = employeeService.save(employee);
         return ResponseEntity.ok(insert);
     }
 

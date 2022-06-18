@@ -26,7 +26,7 @@ public class CityController {
     @PostMapping("save")
     public ResponseEntity<City> save(@Valid @RequestBody City city){
         log.info("Save Request: {}", city); //logging using lombok
-        City insert = CityService.save(city);
+        City insert = cityService.save(city);
         return ResponseEntity.ok(insert);
     }
 
