@@ -28,8 +28,8 @@ public class CityServiceImpl implements CityService {
     }
 
     @Override
-    public Optional<City> findById(String s) {
-        return this.cRepository.findById(s);
+    public Optional<City> findById(String id) {
+        return this.cRepository.findById(id);
     }
 
     @Override
@@ -38,14 +38,15 @@ public class CityServiceImpl implements CityService {
     }
 
     @Override
-    public void deleteById(String s) {
-
-    }
-
-    @Override
     public void delete(City city) {
         this.cRepository.delete(city);
 
 
+    }
+
+    @Override
+    public void deleteById(String id) {
+        Optional<City> city = findById(id);
+        city.ifPresent(this::delete);
     }
 }

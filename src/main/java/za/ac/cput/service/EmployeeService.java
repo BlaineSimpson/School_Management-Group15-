@@ -11,5 +11,5 @@ import java.util.List;
 public interface EmployeeService extends IService<Employee, String> {
     List<Employee> findAll();
 
-    void deleteById(String s);
+    void deleteById(String id);
 }
