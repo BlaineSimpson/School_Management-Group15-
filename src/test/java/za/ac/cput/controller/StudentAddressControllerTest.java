@@ -99,7 +99,7 @@ import static org.junit.jupiter.api.Assertions.*;
             System.out.println(Arrays.asList(response.getBody()));
             assertAll(
                     () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
-                    () -> assertEquals(0, response.getBody().length)
+                    () -> assertEquals(1, response.getBody().length)
             );
         }
 
