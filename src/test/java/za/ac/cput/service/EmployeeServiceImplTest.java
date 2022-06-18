@@ -1,4 +1,4 @@
-package za.ac.cput.impl;
+package za.ac.cput.service;
 
 /*
 Author: Shuaib Allie (217148867)
