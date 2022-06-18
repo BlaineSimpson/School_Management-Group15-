@@ -43,5 +43,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         return this.repository.findAll();
     }
 
+    @Override
+    public void deleteById(String id) {
+        Optional<Employee> employee = findById(id);
+        employee.ifPresent(this::delete);
+    }
   
 }
