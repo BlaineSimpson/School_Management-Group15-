@@ -12,5 +12,4 @@ import za.ac.cput.domain.Country;
 
 @Repository
 public interface ICountryRepository extends JpaRepository<Country,String> {
-
 }
