@@ -1,4 +1,4 @@
-# ADP School Management Assignment
+# ADP School Management Assignment Group 15
 ## Group Members
  * Ali Mohamed - 219113505
  * Demi Farquhar - 220322104
