@@ -7,7 +7,6 @@ Author: Shuaib Allie (217148867)
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import za.ac.cput.domain.City;
-import za.ac.cput.domain.Student;
 import za.ac.cput.repository.CityRepository;
 import za.ac.cput.service.CityService;
 
