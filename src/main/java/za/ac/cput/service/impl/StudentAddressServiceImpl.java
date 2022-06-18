@@ -14,11 +14,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class StudentAddressServiceImp implements StudentAddressService {
+public class StudentAddressServiceImpl implements StudentAddressService {
     private final StudentAddressRepository strepository;
 
     @Autowired
-    public StudentAddressServiceImp(StudentAddressRepository strepository){
+    public StudentAddressServiceImpl(StudentAddressRepository strepository){
 
         this.strepository = strepository;
     }
@@ -43,4 +43,6 @@ public class StudentAddressServiceImp implements StudentAddressService {
         return this.strepository.findAll();
     }
 
+    public void deleteById(String s) {
+    }
 }
