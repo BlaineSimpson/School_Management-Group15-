@@ -28,8 +28,8 @@ public class CityServiceImpl implements CityService {
     }
 
     @Override
-    public Optional<City> findById(String s) {
-        return this.cRepository.findById(s);
+    public Optional<City> findById(String id) {
+        return this.cRepository.findById(id);
     }
 
     @Override
