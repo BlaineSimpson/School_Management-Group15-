@@ -1,4 +1,7 @@
 package za.ac.cput.domain;
+/*ADP 3 Assignment 2
+Author : Sinovuyo Mlanjeni(219220387)
+ */
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
